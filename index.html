@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>선행품질 통합 Agent — 기종별 일정·이슈·자료 관리</title>
+  <meta name="description" content="개발 기종 일정 Excel을 올려 기종·공통 단계별 일정을 한 화면에서 보고, 기종별 이슈 관리함과 자료 목록을 관리하며, 경쟁사 공개 자료 Bench Marking 요약을 반자동으로 정리하는 브라우저 도구(1단계 시험판)">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="inner header-inner">
+      <a class="brand" href="#/status">
+        <span class="brand-name">선행품질 통합 Agent</span>
+        <span class="brand-sub">기종별 일정·이슈·자료 관리 · Bench Marking</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="주 메뉴"></nav>
+    </div>
+  </header>
+
+  <div id="sampleBanner" class="sample-banner" hidden></div>
+  <div id="storageBanner" class="storage-banner" hidden>이 브라우저는 저장소를 막고 있어, 창을 닫으면 입력한 내용이 사라집니다. 「데이터」 메뉴에서 엑셀로 내보내 두십시오.</div>
+
+  <main id="main" class="inner main" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="inner">1단계 시험판 · 데이터는 이 브라우저에만 저장되며 외부 서버나 외부 AI로 보내지 않습니다</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog id="dialog" class="dialog">
+    <form method="dialog" class="dialog-body" novalidate>
+      <h2 id="dialogTitle"></h2>
+      <div id="dialogContent"></div>
+      <div class="dialog-actions" id="dialogActions"></div>
+    </form>
+  </dialog>
+
+  <!-- 로컬 파일(file://)로 열어도 돌도록 module 이 아닌 일반 스크립트로 불러옵니다 -->
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="js/logic.js"></script>
+  <script src="js/sample-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
